@@ -6,6 +6,8 @@ I used a simple [python-app](https://github.com/eslamkhaled560/simple-app/tree/d
 -----------------------------------------
 # Steps:
 
+## 1- Create Jenkins Shared Library
+
 - Configure ```shared-lib``` on Jenkins
 
 ![1](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/a393f8f5-91e9-460b-bea9-3886dac3f4ba)
@@ -41,6 +43,8 @@ def call() {
 }
 ```
 
+## 2- AWS Agent Configuration
+
 - Connect to ```aws-agent``` instance
 
 ![1](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/e8774b54-344d-4435-9c9c-e31115f323b1)
@@ -52,6 +56,8 @@ def call() {
 - Configure Jenkins-Agent ssh connection using ssh public and private key
 
 ![3](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/4ce35b7b-47e3-4f37-8673-77cc3175abe6)
+
+## 3- Jenkins Configuration
 
 - Add ssh credentials to Jenkins
 
@@ -67,6 +73,8 @@ def call() {
 File Link: [Jenkinsfile-dev](https://github.com/eslamkhaled560/simple-app/blob/dev/Jenkinsfile)
 
 ![7](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/2e54157c-073a-47ca-a40f-88ef14b62a4b)
+
+## 4- Output
 
 - Building ```dev``` branch in ```multibranch-simple-app```
 
