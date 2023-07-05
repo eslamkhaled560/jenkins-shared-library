@@ -6,7 +6,20 @@ I used a simple [python-app](https://github.com/eslamkhaled560/simple-app/tree/d
 -----------------------------------------
 # Steps:
 
-## 1- Create Jenkins Shared Library
+## 1- Setup Jenkins Server
+- Run the following:
+```
+ # Docker image fom jenkins with docker
+  docker build -f ./Dockerfile-jenkins -t jenkins-docker
+ # Run docker container
+  docker run -d  -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home jenkins-docker
+```
+- Visit Jenkins Web Page
+```
+ http://localhost:8080
+```
+  
+## 2- Create Jenkins Shared Library
 
 - Configure ```shared-lib``` on Jenkins
 
@@ -43,7 +56,7 @@ def call() {
 }
 ```
 
-## 2- AWS Agent Configuration
+## 3- AWS Agent Configuration
 
 - Connect to ```aws-agent``` instance
 
@@ -57,7 +70,7 @@ def call() {
 
 ![3](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/4ce35b7b-47e3-4f37-8673-77cc3175abe6)
 
-## 3- Jenkins Configuration
+## 4- Jenkins Configuration
 
 - Add ssh credentials to Jenkins
 
@@ -74,7 +87,7 @@ File Link: [Jenkinsfile-dev](https://github.com/eslamkhaled560/simple-app/blob/d
 
 ![7](https://github.com/eslamkhaled560/shared-lib-pipeline/assets/54172897/2e54157c-073a-47ca-a40f-88ef14b62a4b)
 
-## 4- Output
+## 5- Output
 
 - Building ```dev``` branch in ```multibranch-simple-app```
 
